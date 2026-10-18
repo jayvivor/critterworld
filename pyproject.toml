@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "critterworld"
+version = "0.0.1"
+description = "A sandbox-y resource management game about categorizing critters on alien planets."
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic>=2",
+    "flask>=3",
+    "python-statemachine",  # Might not need this one.
+    "transitions",
+]
+
+[project.scripts]
+cw = "critterworld:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/critterworld"]
